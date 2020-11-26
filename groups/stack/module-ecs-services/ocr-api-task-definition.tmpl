@@ -1,0 +1,29 @@
+[
+    {
+        "environment": [
+            { "name": "PORT", "value": "${ocr-api_proxy_port}" },
+            { "name": "LOGLEVEL", "value": "${log_level}" }
+        ],
+        "name": "${service_name}",
+        "image": "${docker_registry}/${service_name}:${ocr-api_release_version}",
+        "cpu": 1,
+        "memory": 512,
+        "mountPoints": [],
+        "portMappings": [{
+            "containerPort": ${ocr-api_proxy_port},
+            "hostPort": 0,
+            "protocol": "tcp"
+        }],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "true",
+                "awslogs-region": "${aws_region}",
+                "awslogs-group": "/ecs/${name_prefix}/${service_name}",
+                "awslogs-stream-prefix": "ecs"
+            }
+        },
+        "volumesFrom": [],
+        "essential": true
+    }
+]
