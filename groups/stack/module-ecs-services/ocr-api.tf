@@ -23,11 +23,10 @@ locals {
       environment                : var.environment
       name_prefix                : var.name_prefix
       aws_region                 : var.aws_region
-      external_top_level_domain  : var.external_top_level_domain
       log_level                  : var.log_level
       docker_registry            : var.docker_registry
 
-      # tdg specific configs
+      # ocr specific configs
       ocr_api_release_version    : var.ocr_api_release_version
       ocr_api_proxy_port         : local.ocr_api_proxy_port
     },

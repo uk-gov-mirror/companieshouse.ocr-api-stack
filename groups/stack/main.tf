@@ -119,7 +119,6 @@ module "ecs-stack" {
   vpc_id                    = local.vpc_id
   ssl_certificate_id        = var.ssl_certificate_id
   zone_id                   = var.zone_id
-  external_top_level_domain = var.external_top_level_domain
   internal_top_level_domain = var.internal_top_level_domain
   subnet_ids                = local.application_ids
   web_access_cidrs          = concat(local.internal_cidrs,local.vpn_cidrs,local.management_private_subnet_cidrs,split(",",local.application_cidrs))
@@ -137,12 +136,15 @@ module "ecs-services" {
   web_access_cidrs          = concat(local.internal_cidrs,local.vpn_cidrs,local.management_private_subnet_cidrs,split(",",local.application_cidrs))
   aws_region                = var.aws_region
   ssl_certificate_id        = var.ssl_certificate_id
-  external_top_level_domain = var.external_top_level_domain
   internal_top_level_domain = var.internal_top_level_domain
   ecs_cluster_id            = module.ecs-cluster.ecs_cluster_id
   task_execution_role_arn   = module.ecs-cluster.ecs_task_execution_role_arn
   docker_registry           = var.docker_registry
   secrets_arn_map           = module.secrets.secrets_arn_map
   log_level                 = var.log_level
+
+  # ocr-api variables
+  ocr_api_application_port  = "10000"
+  ocr_api_release_version   = var.ocr_api_release_version
 
 }

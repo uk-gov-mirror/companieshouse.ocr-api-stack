@@ -24,7 +24,7 @@ resource "aws_lb_listener" "ocr-api-lb-listener" {
 resource "aws_route53_record" "ocr-api-generator-r53-record" {
   count   = "${var.zone_id == "" ? 0 : 1}" # zone_id defaults to empty string giving count = 0 i.e. not route 53 record
   zone_id = var.zone_id
-  name    = "ocr-api${var.external_top_level_domain}"
+  name    = "ocr-api${var.internal_top_level_domain}"
   type    = "A"
   alias {
     name                   = aws_lb.ocr-api-lb.dns_name
