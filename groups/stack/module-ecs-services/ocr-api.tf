@@ -1,6 +1,6 @@
 locals {
   service_name = "ocr-api"
-  ocr-api_proxy_port = 11000 # local port number defined for proxy target of tdg service sitting behind eric
+  ocr_api_proxy_port = 11000 # local port number defined for proxy target of tdg service sitting behind eric
 }
 
 resource "aws_ecs_service" "ocr-api-ecs-service" {
@@ -11,7 +11,7 @@ resource "aws_ecs_service" "ocr-api-ecs-service" {
   depends_on      = [var.tocr-api-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.ocr-api-target_group.arn
-    container_port   = var.ocr-api_application_port
+    container_port   = var.ocr_api_application_port
     container_name   = "ocr-api" # [ALB -> target group -> ocr-api] 
   }
 }
@@ -28,8 +28,8 @@ locals {
       docker_registry            : var.docker_registry
 
       # tdg specific configs
-      ocr-api_release_version    : var.ocr-api_release_version
-      ocr-api_proxy_port         : local.ocr-api_proxy_port
+      ocr_api_release_version    : var.ocr_api_release_version
+      ocr_api_proxy_port         : local.ocr_api_proxy_port
     },
       var.secrets_arn_map
   )
@@ -45,7 +45,7 @@ resource "aws_ecs_task_definition" "ocr-api-task-definition" {
 
 resource "aws_lb_target_group" "ocr-api-target_group" {
   name     = "${var.environment}-${local.service_name}"
-  port     = var.ocr-api_application_port
+  port     = var.ocr_api_application_port
   protocol = "HTTP"
   # Add heath check port here in drop 2
 }

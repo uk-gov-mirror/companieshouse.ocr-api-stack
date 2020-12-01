@@ -114,7 +114,7 @@ variable "vault_password" {
 
 # ocr-api
 
-variable "ocr-api_release_version" {
+variable "ocr_api_release_version" {
   type        = string
   description = "The release version for the ocr-api service."
 }

@@ -78,11 +78,11 @@ variable "secrets_arn_map" {
 
 
 # ocr-api
-variable "ocr-api_release_version" {
+variable "ocr_api_release_version" {
   type        = string
   description = "The release version for the ocr-api service."
 }
-variable "ocr-api_application_port" {
+variable "ocr_api_application_port" {
   type        = string
   description = "The port number for the ocr-api service."
 }

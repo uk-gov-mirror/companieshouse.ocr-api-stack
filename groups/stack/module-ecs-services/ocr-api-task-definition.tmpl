@@ -1,16 +1,16 @@
 [
     {
         "environment": [
-            { "name": "PORT", "value": "${ocr-api_proxy_port}" },
+            { "name": "PORT", "value": "${ocr_api_proxy_port}" },
             { "name": "LOGLEVEL", "value": "${log_level}" }
         ],
         "name": "${service_name}",
-        "image": "${docker_registry}/${service_name}:${ocr-api_release_version}",
+        "image": "${docker_registry}/${service_name}:${ocr_api_release_version}",
         "cpu": 1,
         "memory": 512,
         "mountPoints": [],
         "portMappings": [{
-            "containerPort": ${ocr-api_proxy_port},
+            "containerPort": ${ocr_api_proxy_port},
             "hostPort": 0,
             "protocol": "tcp"
         }],
