@@ -1,6 +1,6 @@
 locals {
   service_name = "ocr-api"
-  ocr_api_proxy_port = 11000 # local port number defined for proxy target of tdg service sitting behind eric
+  ocr_api_proxy_port = 11000 # this is for eric and probably can delete it but will review with others first
 }
 
 resource "aws_ecs_service" "ocr-api-ecs-service" {
@@ -11,7 +11,7 @@ resource "aws_ecs_service" "ocr-api-ecs-service" {
   depends_on      = [var.tocr-api-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.ocr-api-target_group.arn
-    container_port   = var.ocr_api_application_port
+    container_port   = local.ocr_api_proxy_port
     container_name   = "ocr-api" # [ALB -> target group -> ocr-api] 
   }
 }
@@ -46,7 +46,17 @@ resource "aws_lb_target_group" "ocr-api-target_group" {
   name     = "${var.environment}-${local.service_name}"
   port     = var.ocr_api_application_port
   protocol = "HTTP"
-  # Add heath check port here in drop 2
+  vpc_id   = var.vpc_id
+  health_check {
+    healthy_threshold   = "5"
+    unhealthy_threshold = "2"
+    interval            = "30"
+    matcher             = "200"
+    path                = "/healthcheck"
+    port                = "traffic-port"
+    protocol            = "HTTP"
+    timeout             = "5"
+  }
 }
 
 resource "aws_lb_listener_rule" "ocr-api" {
@@ -58,6 +68,6 @@ resource "aws_lb_listener_rule" "ocr-api" {
   }
   condition {
     field  = "path-pattern"
-    values = ["/ocr-api/*"]
+    values = ["/*"]
   }
 }
