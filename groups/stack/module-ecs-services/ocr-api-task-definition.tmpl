@@ -1,7 +1,6 @@
 [
     {
         "environment": [
-            { "name": "PORT", "value": "${ocr_api_proxy_port}" },
             { "name": "LOGLEVEL", "value": "${log_level}" }
         ],
         "name": "${service_name}",
@@ -10,7 +9,7 @@
         "memory": 512,
         "mountPoints": [],
         "portMappings": [{
-            "containerPort": ${ocr_api_proxy_port},
+            "containerPort": 8080,
             "hostPort": 0,
             "protocol": "tcp"
         }],

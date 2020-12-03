@@ -1,6 +1,5 @@
 locals {
   service_name = "ocr-api"
-  ocr_api_proxy_port = 11000 # this is for eric and probably can delete it but will review with others first
 }
 
 resource "aws_ecs_service" "ocr-api-ecs-service" {
@@ -11,7 +10,7 @@ resource "aws_ecs_service" "ocr-api-ecs-service" {
   depends_on      = [var.tocr-api-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.ocr-api-target_group.arn
-    container_port   = local.ocr_api_proxy_port
+    container_port   =  var.ocr_api_application_port
     container_name   = "ocr-api" # [ALB -> target group -> ocr-api] 
   }
 }
@@ -28,7 +27,7 @@ locals {
 
       # ocr specific configs
       ocr_api_release_version    : var.ocr_api_release_version
-      ocr_api_proxy_port         : local.ocr_api_proxy_port
+      ocr_api_application_port   : var.ocr_api_application_port
     },
       var.secrets_arn_map
   )
@@ -45,7 +44,7 @@ resource "aws_ecs_task_definition" "ocr-api-task-definition" {
 resource "aws_lb_target_group" "ocr-api-target_group" {
   name     = "${var.environment}-${local.service_name}"
   port     = var.ocr_api_application_port
-  protocol = "HTTP"
+  protocol = "HTTP" 
   vpc_id   = var.vpc_id
   health_check {
     healthy_threshold   = "5"

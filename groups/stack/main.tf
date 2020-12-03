@@ -144,7 +144,7 @@ module "ecs-services" {
   log_level                 = var.log_level
 
   # ocr-api variables
-  ocr_api_application_port  = "10000"
+  ocr_api_application_port  = "8080"
   ocr_api_release_version   = var.ocr_api_release_version
 
 }
