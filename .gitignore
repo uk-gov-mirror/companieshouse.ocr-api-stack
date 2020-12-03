@@ -30,6 +30,8 @@ override.tf.json
 
 *.sh
 
+AWSCLIV2.pkg
+
 # Mac files
 .DS_Store
 ._*

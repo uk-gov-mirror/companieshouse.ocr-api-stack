@@ -3,6 +3,7 @@ resource "aws_lb" "ocr-api-lb" {
   security_groups = [aws_security_group.internal-service-sg.id]
   subnets         = flatten([split(",", var.subnet_ids)])
   internal        = true
+  idle_timeout    = 400
 }
 
 resource "aws_lb_listener" "ocr-api-lb-listener" {
