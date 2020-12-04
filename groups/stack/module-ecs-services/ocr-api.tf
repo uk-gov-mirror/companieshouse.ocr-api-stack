@@ -51,7 +51,7 @@ resource "aws_lb_target_group" "ocr-api-target_group" {
     unhealthy_threshold = "2"
     interval            = "30"
     matcher             = "200"
-    path                = "/healthcheck"
+    path                = "/ocr-api/healthcheck"
     port                = "traffic-port"
     protocol            = "HTTP"
     timeout             = "5"
@@ -67,6 +67,6 @@ resource "aws_lb_listener_rule" "ocr-api" {
   }
   condition {
     field  = "path-pattern"
-    values = ["/*"]
+    values = ["/ocr-api/*"]
   }
 }
