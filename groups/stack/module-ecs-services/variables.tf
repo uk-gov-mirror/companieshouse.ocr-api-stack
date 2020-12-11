@@ -31,6 +31,10 @@ variable "web_access_cidrs" {
 }
 
 # DNS
+variable "external_top_level_domain" {
+  type        = string
+  description = "The type levelel of the DNS domain for external access."
+}
 variable "internal_top_level_domain" {
   type        = string
   description = "The type levelel of the DNS domain for internal access."

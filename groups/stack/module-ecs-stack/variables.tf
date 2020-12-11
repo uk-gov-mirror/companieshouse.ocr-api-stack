@@ -33,7 +33,10 @@ variable "zone_id" {
   type        = string
   description = "The ID of the hosted zone to contain the Route 53 record."
 }
-
+variable "external_top_level_domain" {
+  type        = string
+  description = "The type levelel of the DNS domain for external access."
+}
 variable "internal_top_level_domain" {
   type        = string
   description = "The type levelel of the DNS domain for internal access."
