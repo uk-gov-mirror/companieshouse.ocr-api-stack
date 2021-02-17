@@ -61,17 +61,17 @@ variable "ec2_image_id" {
 
 # Auto-scaling Group
 variable "asg_max_instance_count" {
-  default     = 1
+  default     = 3
   type        = number
   description = "The maximum allowed number of instances in the autoscaling group for the cluster."
 }
 variable "asg_min_instance_count" {
-  default     = 1
+  default     = 2
   type        = number
   description = "The minimum allowed number of instances in the autoscaling group for the cluster."
 }
 variable "asg_desired_instance_count" {
-  default     = 1
+  default     = 2
   type        = number
   description = "The desired number of instances in the autoscaling group for the cluster. Must fall within the min/max instance count range."
 }
@@ -88,6 +88,12 @@ variable "zone_id" {
   type        = string
   description = "The ID of the hosted zone to contain the Route 53 record."
 }
+
+variable "external_top_level_domain" {
+  type        = string
+  description = "The type levelel of the DNS domain for external access."
+}
+
 variable "internal_top_level_domain" {
   type        = string
   description = "The type levelel of the DNS domain for internal access."

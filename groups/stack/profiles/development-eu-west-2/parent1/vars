@@ -6,8 +6,9 @@ state_prefix = "env:/development"
 aws_profile = "development-eu-west-2"
 
 # Certificate for https access through ALB
-ssl_certificate_id = "arn:aws:acm:eu-west-2:169942020521:certificate/189427a3-3662-41ca-85d8-e1f42b6ea07e"
+ssl_certificate_id = "arn:aws:acm:eu-west-2:169942020521:certificate/9185ee37-c2d0-4de1-a9fc-00ab77b79317"
 zone_id = "Z2KSI4Z5ZN9NT0"
+external_top_level_domain = ".parent1.aws.chdev.org"
 internal_top_level_domain = "-parent1.development.aws.internal"
 
 ec2_key_pair_name = "chs-parent1"
