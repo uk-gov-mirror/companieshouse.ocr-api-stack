@@ -70,12 +70,6 @@ variable "ssl_certificate_id" {
   description = "The ARN of the certificate for https access through the ALB."
 }
 
-# Secrets
-variable "secrets_arn_map" {
-  type = map(string)
-  description = "The ARNs for all secrets"
-}
-
 # ------------------------------------------------------------------------------
 
 # Services

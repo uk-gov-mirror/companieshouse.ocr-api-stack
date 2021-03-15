@@ -28,8 +28,7 @@ locals {
       # ocr specific configs
       ocr_api_release_version    : var.ocr_api_release_version
       ocr_api_application_port   : var.ocr_api_application_port
-    },
-      var.secrets_arn_map
+    }
   )
 }
 

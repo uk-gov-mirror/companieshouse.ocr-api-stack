@@ -73,10 +73,6 @@ provider "vault" {
   }
 }
 
-data "vault_generic_secret" "secrets" {
-  path = "applications/${var.aws_profile}/${var.environment}/${local.stack_fullname}"
-}
-
 locals {
   # stack name is hardcoded here in main.tf for this stack. It should not be overridden per env
   stack_name       = "ocr-api"
@@ -98,16 +94,6 @@ module "ecs-cluster" {
   asg_max_instance_count     = var.asg_max_instance_count
   asg_min_instance_count     = var.asg_min_instance_count
   asg_desired_instance_count = var.asg_desired_instance_count
-}
-
-module "secrets" {
-  source = "./module-secrets"
-
-  stack_name  = local.stack_name
-  name_prefix = local.name_prefix
-  environment = var.environment
-  kms_key_id  = data.terraform_remote_state.services-stack-configs.outputs.services_stack_configs_kms_key_id
-  secrets     = data.vault_generic_secret.secrets.data
 }
 
 module "ecs-stack" {
@@ -142,7 +128,6 @@ module "ecs-services" {
   ecs_cluster_id            = module.ecs-cluster.ecs_cluster_id
   task_execution_role_arn   = module.ecs-cluster.ecs_task_execution_role_arn
   docker_registry           = var.docker_registry
-  secrets_arn_map           = module.secrets.secrets_arn_map
   log_level                 = var.log_level
 
   # ocr-api variables
