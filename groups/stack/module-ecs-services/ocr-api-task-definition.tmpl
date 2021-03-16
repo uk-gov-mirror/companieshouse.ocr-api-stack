@@ -1,12 +1,12 @@
 [
     {
         "environment": [
-            { "name": "LOGLEVEL", "value": "${log_level}" }
+            { "name": "LOGLEVEL", "value": "${log_level}", "name" : "OCR_TESSERACT_THREAD_POOL_SIZE", "value": "${ocr_tesseract_thread_pool_size}" }
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${ocr_api_release_version}",
-        "cpu": 1,
-        "memory": 2048,
+        "cpu": 2,
+        "memory": 4096,
         "mountPoints": [],
         "portMappings": [{
             "containerPort": ${ocr_api_application_port},

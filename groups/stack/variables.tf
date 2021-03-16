@@ -37,10 +37,15 @@ variable "docker_registry" {
   type        = string
   description = "The FQDN of the Docker registry."
 }
+## Docker Container Environmental Variables
 variable "log_level" {
   default     = "INFO"
   type        = string
   description = "The log level for services to use: TRACE, DEBUG, INFO or ERROR"
+}
+variable "ocr_tesseract_thread_pool_size" {
+  type        = number
+  description = "The number of threads used in the ocr-api application for Tesseract processing (Image to text)"
 }
 
 # EC2
@@ -49,7 +54,6 @@ variable "ec2_key_pair_name" {
   description = "The key pair for SSH access to ec2 instances in the clusters."
 }
 variable "ec2_instance_type" {
-  default     = "t3.medium"
   type        = string
   description = "The instance type for ec2 instances in the clusters."
 }
