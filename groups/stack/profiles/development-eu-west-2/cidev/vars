@@ -15,7 +15,7 @@ ec2_key_pair_name = "chs-cidev"
 
 # app configs
 log_level = "TRACE"
-ocr_tesseract_thread_pool_size = 2
+ocr_tesseract_thread_pool_size = "2"
 
 # app cluster performance
-ec2_instance_type = "t3.medium"
+# ec2_instance_type = "t3.medium"

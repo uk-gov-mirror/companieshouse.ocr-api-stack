@@ -44,7 +44,7 @@ variable "log_level" {
   description = "The log level for services to use: TRACE, DEBUG, INFO or ERROR"
 }
 variable "ocr_tesseract_thread_pool_size" {
-  type        = number
+  type        = string
   description = "The number of threads used in the ocr-api application for Tesseract processing (Image to text)"
 }
 
@@ -55,6 +55,7 @@ variable "ec2_key_pair_name" {
 }
 variable "ec2_instance_type" {
   type        = string
+  default     = "t3.medium"
   description = "The instance type for ec2 instances in the clusters."
 }
 variable "ec2_image_id" {
