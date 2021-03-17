@@ -16,3 +16,6 @@ ec2_key_pair_name = "chs-cidev"
 # app configs
 log_level = "DEBUG"
 ocr_tesseract_thread_pool_size = "2"
+
+# app cluster performance
+ec2_instance_type = "c6g.large"

@@ -16,3 +16,6 @@ ec2_key_pair_name = "chs-parent1"
 # app configs
 log_level = "DEBUG"
 ocr_tesseract_thread_pool_size = "3"
+
+# app cluster performance
+ec2_instance_type = "c6g.large"

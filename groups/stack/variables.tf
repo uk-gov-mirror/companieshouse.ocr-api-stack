@@ -54,7 +54,6 @@ variable "ec2_key_pair_name" {
   description = "The key pair for SSH access to ec2 instances in the clusters."
 }
 variable "ec2_instance_type" {
-  default     = "t3.medium"
   type        = string
   description = "The instance type for ec2 instances in the clusters."
 }
