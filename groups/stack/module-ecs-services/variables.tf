@@ -63,6 +63,10 @@ variable "log_level" {
   type        = string
   description = "The log level to be set in the environment variables for the container."
 }
+variable "ocr_tesseract_thread_pool_size" {
+  type        = string
+  description = "The number of threads used in the ocr-api application for Tesseract processing (Image to text)"
+}
 
 # Certificates
 variable "ssl_certificate_id" {
