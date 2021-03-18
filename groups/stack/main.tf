@@ -134,4 +134,8 @@ module "ecs-services" {
   ocr_api_application_port       = "8080"
   ocr_api_release_version        = var.ocr_api_release_version
   ocr_tesseract_thread_pool_size = var.ocr_tesseract_thread_pool_size
+
+  # machine properties
+  machine_cpu_count              = var.machine_cpu_count
+  machine_amount_of_memory_mib   = var.machine_amount_of_memory_mib
 }

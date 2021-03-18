@@ -113,6 +113,16 @@ variable "vault_password" {
   description = "The password used by the Vault provider."
 }
 
+# Machine properties
+variable "machine_cpu_count" {
+  type        = number
+  description = "The number of vCPUs the ocr-api uses."
+}
+variable "machine_amount_of_memory_mib" {
+  type        = number
+  description = "The amount of memory in MiB to allocate to the ocr-api."
+}
+
 # ------------------------------------------------------------------------------
 # Services
 # ------------------------------------------------------------------------------

@@ -19,3 +19,7 @@ ocr_tesseract_thread_pool_size = "3"
 
 # app cluster performance
 ec2_instance_type = "t3.medium"
+
+# machine properties
+machine_cpu_count = 2
+machine_amount_of_memory_mib = 2048

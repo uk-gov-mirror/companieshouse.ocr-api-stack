@@ -74,6 +74,16 @@ variable "ssl_certificate_id" {
   description = "The ARN of the certificate for https access through the ALB."
 }
 
+# Machine properties
+variable "machine_cpu_count" {
+  type        = number
+  description = "The number of vCPUs the ocr-api uses."
+}
+variable "machine_amount_of_memory_mib" {
+  type        = number
+  description = "The amount of memory to allocate to the ocr-api."
+}
+
 # ------------------------------------------------------------------------------
 
 # Services

@@ -6,8 +6,8 @@
         ],
         "name": "${service_name}",
         "image": "${docker_registry}/${service_name}:${ocr_api_release_version}",
-        "cpu": 2,
-        "memory": 3072,
+        "cpu": ${machine_cpu_count},
+        "memory": ${machine_amount_of_memory_mib},
         "mountPoints": [],
         "portMappings": [{
             "containerPort": ${ocr_api_application_port},
