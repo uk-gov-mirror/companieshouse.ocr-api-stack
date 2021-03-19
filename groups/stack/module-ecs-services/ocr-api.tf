@@ -6,7 +6,7 @@ resource "aws_ecs_service" "ocr-api-ecs-service" {
   name            = "${var.environment}-${local.service_name}"
   cluster         = var.ecs_cluster_id
   task_definition = aws_ecs_task_definition.ocr-api-task-definition.arn
-  desired_count   = 1
+  desired_count   = 2
   depends_on      = [var.tocr-api-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.ocr-api-target_group.arn
