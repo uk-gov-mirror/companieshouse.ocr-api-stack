@@ -6,7 +6,7 @@ resource "aws_ecs_service" "ocr-api-ecs-service" {
   name            = "${var.environment}-${local.service_name}"
   cluster         = var.ecs_cluster_id
   task_definition = aws_ecs_task_definition.ocr-api-task-definition.arn
-  desired_count   = 2
+  desired_count   = var.number_of_tasks
   depends_on      = [var.tocr-api-lb-arn]
   load_balancer {
     target_group_arn = aws_lb_target_group.ocr-api-target_group.arn
@@ -29,6 +29,7 @@ locals {
       ocr_api_release_version        : var.ocr_api_release_version
       ocr_api_application_port       : var.ocr_api_application_port
       ocr_tesseract_thread_pool_size : var.ocr_tesseract_thread_pool_size
+      number_of_tasks                : var.number_of_tasks
 
       # machine properties
       machine_cpu_count              : var.machine_cpu_count

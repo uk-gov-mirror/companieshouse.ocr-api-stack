@@ -62,6 +62,10 @@ variable "ec2_image_id" {
   type        = string
   description = "The machine image name for the ECS cluster launch configuration."
 }
+variable "number_of_tasks" {
+  type        = number
+  description = "The number of instances of the ocr-api task to run" 
+}
 
 # Auto-scaling Group
 variable "asg_max_instance_count" {
@@ -135,3 +139,4 @@ variable "ocr_api_release_version" {
   description = "The release version for the ocr-api service."
 }
 
+number_of_tasks

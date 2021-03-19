@@ -49,6 +49,10 @@ variable "ecs_cluster_id" {
   type        = string
   description = "The ARN of the ECS cluster to deploy the service to."
 }
+variable "number_of_tasks" {
+  type        = number
+  description = "The number of instances of the ocr-api task to run" 
+}
 
 # Docker Container
 variable "docker_registry" {
