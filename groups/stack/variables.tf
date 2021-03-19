@@ -138,5 +138,3 @@ variable "ocr_api_release_version" {
   type        = string
   description = "The release version for the ocr-api service."
 }
-
-number_of_tasks
