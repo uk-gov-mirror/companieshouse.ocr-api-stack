@@ -23,4 +23,4 @@ number_of_tasks = 2
 
 # machine properties
 machine_cpu_count = 2
-machine_amount_of_memory_mib = 2048
+machine_amount_of_memory_mib = 3048
