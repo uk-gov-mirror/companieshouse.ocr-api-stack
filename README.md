@@ -16,7 +16,7 @@ These are configured in the profile environmental vars files (no defaults set):
 | machine_amount_of_memory_mib    | The amount of memory in MiB to allocate to the ocr-api.                                  |
 | ocr_tesseract_thread_pool_size  | The number of threads used in the ocr-api application for Tesseract processing (Image to text) |
 
-**Make sure that the CPU and Memory values are in the range of the ec2_instance_type.**  The instance type defines the overall memory and CPU in the cluster. When these do NOT match, the plan will be made and applied but fail in deployment with no clear error messages.
+**Make sure that the CPU and Memory values are in the range of the ec2_instance_type.**  The instance type might define the overall memory and CPU in the cluster - Need to confirm (getting inconsistent results). When these do NOT match, the plan will be made and applied but fail in deployment with no clear error messages.
 
 ## Internal / external naming
 
