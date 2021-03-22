@@ -49,6 +49,10 @@ variable "ecs_cluster_id" {
   type        = string
   description = "The ARN of the ECS cluster to deploy the service to."
 }
+variable "number_of_tasks" {
+  type        = number
+  description = "The number of instances of the ocr-api task to run" 
+}
 
 # Docker Container
 variable "docker_registry" {
@@ -63,11 +67,25 @@ variable "log_level" {
   type        = string
   description = "The log level to be set in the environment variables for the container."
 }
+variable "ocr_tesseract_thread_pool_size" {
+  type        = string
+  description = "The number of threads used in the ocr-api application for Tesseract processing (Image to text)"
+}
 
 # Certificates
 variable "ssl_certificate_id" {
   type        = string
   description = "The ARN of the certificate for https access through the ALB."
+}
+
+# Machine properties
+variable "machine_cpu_count" {
+  type        = number
+  description = "The number of vCPUs the ocr-api uses."
+}
+variable "machine_amount_of_memory_mib" {
+  type        = number
+  description = "The amount of memory to allocate to the ocr-api."
 }
 
 # ------------------------------------------------------------------------------

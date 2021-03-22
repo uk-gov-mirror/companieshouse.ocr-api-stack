@@ -13,5 +13,14 @@ internal_top_level_domain = "-parent1.development.aws.internal"
 
 ec2_key_pair_name = "chs-parent1"
 
-# shared configs
-log_level = "TRACE"
+# app configs
+log_level = "DEBUG"
+ocr_tesseract_thread_pool_size = "3"
+
+# app cluster performance
+ec2_instance_type = "t3.medium"
+number_of_tasks = 2
+
+# machine properties
+machine_cpu_count = 2
+machine_amount_of_memory_mib = 2048

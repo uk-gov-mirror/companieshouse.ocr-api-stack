@@ -37,10 +37,15 @@ variable "docker_registry" {
   type        = string
   description = "The FQDN of the Docker registry."
 }
+## Docker Container Environmental Varia
 variable "log_level" {
   default     = "INFO"
   type        = string
   description = "The log level for services to use: TRACE, DEBUG, INFO or ERROR"
+}
+variable "ocr_tesseract_thread_pool_size" {
+  type        = string
+  description = "The number of threads used in the ocr-api application for Tesseract processing (Image to text)"
 }
 
 # EC2
@@ -49,7 +54,6 @@ variable "ec2_key_pair_name" {
   description = "The key pair for SSH access to ec2 instances in the clusters."
 }
 variable "ec2_instance_type" {
-  default     = "t3.medium"
   type        = string
   description = "The instance type for ec2 instances in the clusters."
 }
@@ -57,6 +61,10 @@ variable "ec2_image_id" {
   default     = "ami-007ef488b3574da6b" # ECS optimized Linux in London created 16/10/2019
   type        = string
   description = "The machine image name for the ECS cluster launch configuration."
+}
+variable "number_of_tasks" {
+  type        = number
+  description = "The number of instances of the ocr-api task to run" 
 }
 
 # Auto-scaling Group
@@ -109,6 +117,16 @@ variable "vault_password" {
   description = "The password used by the Vault provider."
 }
 
+# Machine properties
+variable "machine_cpu_count" {
+  type        = number
+  description = "The number of vCPUs the ocr-api uses."
+}
+variable "machine_amount_of_memory_mib" {
+  type        = number
+  description = "The amount of memory in MiB to allocate to the ocr-api."
+}
+
 # ------------------------------------------------------------------------------
 # Services
 # ------------------------------------------------------------------------------
@@ -120,4 +138,3 @@ variable "ocr_api_release_version" {
   type        = string
   description = "The release version for the ocr-api service."
 }
-
