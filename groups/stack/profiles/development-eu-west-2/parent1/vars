@@ -18,9 +18,15 @@ log_level = "DEBUG"
 ocr_tesseract_thread_pool_size = "3"
 
 # app cluster performance
-ec2_instance_type = "t3.medium"
+#ec2_instance_type = "t3.medium"
 number_of_tasks = 1
 
+ec2_instance_type = "c5.xlarge"
+
+
 # machine properties
-machine_cpu_count = 2
-machine_amount_of_memory_mib = 2048
+#machine_cpu_count = 2
+#machine_amount_of_memory_mib = 2048
+
+machine_cpu_count = 4
+machine_amount_of_memory_mib = 8000
