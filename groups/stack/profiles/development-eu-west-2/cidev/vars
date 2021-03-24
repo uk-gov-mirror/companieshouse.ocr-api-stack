@@ -15,18 +15,13 @@ ec2_key_pair_name = "chs-cidev"
 
 # app configs
 log_level = "DEBUG"
-ocr_tesseract_thread_pool_size = "2"
+ocr_tesseract_thread_pool_size = "4"
 
 # app cluster performance
-#ec2_instance_type = "t3.medium"
-number_of_tasks = 1
-
-ec2_instance_type = "c5.xlarge"
-
+ec2_instance_type = "t3.medium"
+number_of_tasks = 2
 
 # machine properties
-machine_cpu_count = 2
-machine_amount_of_memory_mib = 2048
 
-#machine_cpu_count = 4
-#machine_amount_of_memory_mib = 8000
+machine_cpu_count = 2
+machine_amount_of_memory_mib = 3068
