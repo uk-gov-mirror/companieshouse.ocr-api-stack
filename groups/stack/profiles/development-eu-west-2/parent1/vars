@@ -23,7 +23,7 @@ number_of_tasks = 2
 
 # machine properties
 machine_cpu_count = 16
-machine_amount_of_memory_mib = 14000
+machine_amount_of_memory_mib = 7000
 
 
 # Testing history
@@ -31,3 +31,4 @@ machine_amount_of_memory_mib = 14000
 # Test 2 - ocr_tesseract_thread_pool_size = "4" ec2_instance_type = "c5.xlarge" number_of_tasks = 2 machine_cpu_count = 4 machine_amount_of_memory_mib = 7000
 # Test 3 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 28000
 # Test 4 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 14000
+# Test 5 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 7000
