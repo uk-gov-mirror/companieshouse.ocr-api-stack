@@ -22,7 +22,7 @@ ec2_instance_type = "z1d.3xlarge"
 number_of_tasks = 2
 
 # machine properties
-machine_cpu_count = 16
+machine_cpu_count = 12
 machine_amount_of_memory_mib = 7000
 
 
