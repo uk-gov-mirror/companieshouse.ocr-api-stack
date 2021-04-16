@@ -15,14 +15,14 @@ ec2_key_pair_name = "chs-parent1"
 
 # app configs
 log_level = "DEBUG"
-ocr_tesseract_thread_pool_size = "12"
+ocr_tesseract_thread_pool_size = "16"
 
 # app cluster performance
-ec2_instance_type = "z1d.3xlarge"
+ec2_instance_type = "c5n.4xlarge"
 number_of_tasks = 2
 
 # machine properties
-machine_cpu_count = 12
+machine_cpu_count = 16
 machine_amount_of_memory_mib = 7000
 
 
@@ -33,3 +33,4 @@ machine_amount_of_memory_mib = 7000
 # Test config 4 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 14000
 # Test config 5 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 7000
 # Test config 6 - ocr_tesseract_thread_pool_size = "12" ec2_instance_type = "z1d.3xlarge" number_of_tasks = 2 machine_cpu_count = 12 machine_amount_of_memory_mib = 7000
+# Test config 7 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c5n.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 7000
