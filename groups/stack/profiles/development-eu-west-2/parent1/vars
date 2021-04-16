@@ -22,12 +22,14 @@ ec2_instance_type = "z1d.3xlarge"
 number_of_tasks = 2
 
 # machine properties
-machine_cpu_count = 12
-machine_amount_of_memory_mib = 28000
+machine_cpu_count = 16
+machine_amount_of_memory_mib = 7000
 
 
 # Testing history
 # Test config 1 - ocr_tesseract_thread_pool_size = "3" ec2_instance_type = "t3.medium" number_of_tasks = 1 machine_cpu_count = 2 machine_amount_of_memory_mib = 2048
 # Test config 2 - ocr_tesseract_thread_pool_size = "4" ec2_instance_type = "c5.xlarge" number_of_tasks = 2 machine_cpu_count = 4 machine_amount_of_memory_mib = 7000
 # Test config 3 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 28000
-# Test config 4 - ocr_tesseract_thread_pool_size = "12" ec2_instance_type = "z1d.3xlarge" number_of_tasks = 2 machine_cpu_count = 12 machine_amount_of_memory_mib = 28000
+# Test config 4 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 14000
+# Test config 5 - ocr_tesseract_thread_pool_size = "16" ec2_instance_type = "c4.4xlarge" number_of_tasks = 2 machine_cpu_count = 16 machine_amount_of_memory_mib = 7000
+# Test config 6 - ocr_tesseract_thread_pool_size = "12" ec2_instance_type = "z1d.3xlarge" number_of_tasks = 2 machine_cpu_count = 12 machine_amount_of_memory_mib = 7000
